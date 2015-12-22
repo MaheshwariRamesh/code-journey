@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    char string[10000];
+    int i,index=0,count=0,arr[26]={0};
+    gets(string);
+    for(i=0;string[i]!='\0';i++)
+    {
+        if(string[i]!=' ')
+        {
+            string[i]=tolower(string[i]);
+            index=((int)string[i])%97;
+            arr[index]++;
+        }
+    }
+    for(i=0;i<26;i++)
+    {
+        if(arr[i]!=0)
+        count++;
+        else
+        break;
+    }
+    if(count==26)
+    printf("pangram\n");
+    else
+    printf("not pangram\n");
+    return 0;
+}
