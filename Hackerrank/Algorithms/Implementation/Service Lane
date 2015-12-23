@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int n,t,enter[1000],exit[1000],k;
+    int w[99998];
+    scanf("%d %d",&n,&t);
+    for(k=0;k<n;k++)
+    scanf("%d",&w[k]);
+    for(k=0;k<t;k++)
+    scanf("%d %d",&enter[k],&exit[k]);
+    for(k=0;k<t;k++)
+    {
+	int m,min=100;
+	for(m=enter[k];m<=exit[k];m++)
+	    min=w[m]<min?w[m]:min;
+	printf("%d\n",min);
+    }
+    return 0;
+}
